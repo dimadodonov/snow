@@ -1,0 +1,110 @@
+body {
+  background-color: #000;
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  font-family: system-ui, sans-serif;
+}
+
+main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1514583228371-3da8bd8d6aba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+main .desc {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 480px) {
+  main .desc {
+    bottom: 80px;
+  }
+}
+main .desc h1,
+main .desc span,
+main .desc span a {
+  color: white;
+  text-align: center;
+}
+main .desc h1 a,
+main .desc span a,
+main .desc span a a {
+  text-decoration: none;
+}
+main .desc h1 a strong,
+main .desc span a strong,
+main .desc span a a strong {
+  font-weight: 600;
+}
+main .desc span {
+  opacity: 0;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 150%;
+}
+main .desc span.show {
+  -webkit-animation: showText 1s linear forwards;
+          animation: showText 1s linear forwards;
+}
+@-webkit-keyframes showText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes showText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+main .byphoto {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+@media screen and (max-width: 480px) {
+  main .byphoto {
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+main .byphoto span,
+main .byphoto a {
+  color: white;
+}
+main .byphoto a {
+  margin-left: 10px;
+  white-space: nowrap;
+  letter-spacing: 3.5px;
+}
+
+#ars_canv {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  top: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: 5s;
+  transition-delay: 3s;
+}
